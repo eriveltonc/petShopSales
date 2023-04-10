@@ -21,13 +21,14 @@ The original dataset has **1500 rows** and **8 columns**. Using Python and the P
  
  
 In this context, the conversion of data listed as "object" was necessary. For the 'price' column, it was necessary to correct null values, entered in the form of a string, in order to later convert the datatype to float. As requested, the null value was replaced with the overall median of 'price' and rounded to two decimal places. Finishing up the treatment of this column, the conversion to float was completed.
-`df['price'] = df['price'].astype(str).str.replace('unlisted', np.empty)
+
+`df['price'] = df['price'].astype(str).str.replace('unlisted', np.empty)´
 
 df['price'] = df['price'].astype(float)
 
 df['price'].fillna(df['price'].mean(), inplace=True)
 
-df['price'] = round(df['price'], 2)``
+df['price'] = round(df['price'], 2)´
 
 The product_id column is made up of a set of unique, non-null integer numbers, as expected. 
 
